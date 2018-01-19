@@ -1,6 +1,8 @@
 class SessionController < ApplicationController
 
   def new
+    # user = User.new
+
   end
 
   def create
@@ -10,13 +12,12 @@ class SessionController < ApplicationController
       # successful login
       # create a cookie to store a session, and keep track of the user ID
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to profile_path
     else
       # bad credentials/unsuccessful login
       flash[:error] = "Invalid username or password"
       redirect_to login_path
     end
-
   end
 
   def destroy

@@ -8,8 +8,17 @@ class PagesController < ApplicationController
   def home
   end
 
+  def new
+    @user = User.new
+  end
+
+  def create
+    User.create user_params
+    redirect_to login_path
+  end
+
   def profile
-    
+
     # only visible to logged-in users
   end
 
@@ -17,5 +26,9 @@ class PagesController < ApplicationController
   #   # only admins get to party
   # end
 
+  # private
+  def user_params
+    params.require(:user).permit(:name, :email, :password)
+  end
 
 end

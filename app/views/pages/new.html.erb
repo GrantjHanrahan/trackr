@@ -1,18 +1,18 @@
-<h1>Login</h1>
-<!-- <p>Find me in app/views/session/create.html.erb</p> -->
+<h1>Register</h1>
+
 <%= flash[:error] %>
 
 <%= form_tag login_path do %>
 
-  <%#= label_tag :name %>
-  <%#= text_field_tag :name, nil %>
-
+  <%= label_tag :name %>
+  <%= text_field_tag :name, nil %>
+  <br>
   <%= label_tag :email %>
   <%= email_field_tag :email, nil %>
-
+  <br>
   <%= label_tag :password %>
   <%= password_field_tag :password, nil %>
-
-  <%= submit_tag 'Login' %>
+  <br>
+  <%= submit_tag 'Register' %>
 
 <% end %>
