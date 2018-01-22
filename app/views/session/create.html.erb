@@ -1,7 +1,7 @@
 <h1>Login</h1>
 <!-- <p>Find me in app/views/session/create.html.erb</p> -->
 <%= flash[:error] %>
-
+<div class="user">
 <%= form_tag login_path do %>
 
   <%#= label_tag :name %>
@@ -16,3 +16,4 @@
   <%= submit_tag 'Login' %>
 
 <% end %>
+</div>

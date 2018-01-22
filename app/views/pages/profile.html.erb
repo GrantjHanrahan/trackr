@@ -1,5 +1,5 @@
-<%= link_to 'Edit Account', edit_user_path(@current_user.id) %>|
-<%= link_to 'Logout', login_path, method: :delete %>
+<%= link_to 'Edit Account ', edit_user_path(@current_user.id) %>  |
+<%= link_to ' Logout', login_path, method: :delete %>
 
 <h3><strong>Profile: </strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></h3>
 <br>
@@ -7,21 +7,31 @@
 <% @bmi = @current_user.weight / (@current_user.height * @current_user.height) %>
 <div class="container" id="user_stats">
     <div class="row">
-        <div class="col-md-3" style="background-color:lavender;"><strong>AGE:</strong><em> <%= @current_user.age %>  </em></div>
-        <div class="col-md-3" style="background-color:lightgreen;"><strong>Height:</strong><em> <%= @current_user.height %></em></div>
-        <div class="col-md-3" style="background-color:lightblue;"><strong>Weight: </strong><em><%= @current_user.weight %> </em></div>
-        <div class="col-md-3" style="background-color:lightyellow;"><strong>BMI: </strong><em><%= @bmi.round(2) %> </em></div>
+        <div class="col-md-2" style="background-color:lavender;"><strong>AGE:</strong><em> <%= @current_user.age %>  </em></div>
+        <div class="col-md-2" style="background-color:lightgreen;"><strong>Height:</strong><em> <%= @current_user.height %> m</em></div>
+        <div class="col-md-2" style="background-color:lightblue;"><strong>Weight: </strong><em><%= @current_user.weight %> kg</em></div>
+        <div class="col-md-2" style="background-color:lightyellow;"><strong>BMI: </strong><em><%= @bmi.round(2) %> </em></div>
     </div>
-    <h3>Plan: </h3>
-    <div class="row">
-    <div class="col-sm-4 col-md-10" style="background-color:yellow;">CALENDER - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure voluptatem reprehenderit reiciendis voluptatum expedita aspernatur recusandae, quae vel quos, molestias voluptas veritatis quia tempora molestiae? Blanditiis cum, dolor eius dolores.</div>
-    </div>
+  </div>
 
-    <h3>Create Quick Workout: </h3>
+  <div class="container" id="planner">
+    <h3>Planner: </h3>
     <div class="row">
-    <div class="col-md-3" style="background-color:aqua;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
-    <div class="col-md-3" style="background-color:lime;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
-    <div class="col-md-3" style="background-color:teal;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
-    <div class="col-md-3" style="background-color:orange;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
+    <div class="col-sm-4 col-md-10">
+      <%= image_tag 'cal.jpg'%><br>
+     </div>
+    </div>
+</div>
+
+<div class="container text-center" id="db-workouts">
+    <div class="row">
+    <div class="col-md-4">
+      <h3>Create New Workout</h3><br>
+      <%= image_tag 'trail-run.jpg'%><br>
+      <small><i>Photo by David Marcu on Unsplash</i></small></div>
+    <div class="col-md-4">
+      <h3>View Previous Workouts</h3><br>
+      <%= image_tag 'resting.jpg'%><br>
+      <small><i>Photo by Ben Blennerhassett on Unsplash</i></small></div>
   </div>
 </div>

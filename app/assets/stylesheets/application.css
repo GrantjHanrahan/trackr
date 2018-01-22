@@ -14,8 +14,61 @@
  *= require_self
  *= require fullcalendar
  */
+ html {
+   /* background: url("https://media.giphy.com/media/6Z3D5t31ZdoNW/giphy.gif") */
+   /* background: url("https://images.unsplash.com/photo-1465479423260-c4afc24172c6?auto=format&fit=crop&w=1500&q=80") */
+   no-repeat center left fixed;
+   -webkit-background-size: cover;
+   -moz-background-size: cover;
+   -o-background-size: cover;
+   background-size: cover;
+   /* opacity: 0.5; */
+ }
+body{
+     background: url("https://images.unsplash.com/photo-1465479423260-c4afc24172c6?auto=format&fit=crop&w=1500&q=80")
+     no-repeat center left fixed;
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+  margin-left: 5%;
+  /* margin-right: 20%; */
+  font-size: 120%;
+  font-family: 'Libre Franklin', sans-serif;
+}
+h1{
+  color:orangered;
+}
  img{
    width: 2.5vw;
    height: 5vh;
-
  }
+ a{
+   font-size: 120%;
+   color: lightgreen;
+   padding: 0px 4px;
+ }
+a:hover{
+  color: yellow;
+}
+
+/* user login, registration forms */
+.user{
+  background-color: rgba(11, 8, 8, 0.3);
+  margin-left: 14%;
+  margin-right: 14%;
+  margin-top: 3%;
+  padding:5px;
+  color: white;
+  font-size: 130%;
+  text-align: center;
+}
+
+.user label{
+  padding: 4px;
+  color: white;
+}
+
+.user .submit{
+  background-color: black;
+}
