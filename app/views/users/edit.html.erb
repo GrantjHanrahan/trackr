@@ -1,0 +1,30 @@
+<h1>Users#edit</h1>
+<%= form_for @current_user do |f| %>
+  <fieldset>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :height %>
+    <%= f.text_field :height %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :weight %>
+    <%= f.text_field :weight %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :avatar, 'Image URL' %>
+    <%= f.url_field :avatar %>
+  </fieldset>
+
+  <br>
+  <%= f.submit 'Save' %>
+<% end %>

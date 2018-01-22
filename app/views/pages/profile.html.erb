@@ -1,3 +1,27 @@
-<h1>Profile Page</h1>
+<%= link_to 'Edit Account', edit_user_path(@current_user.id) %>|
+<%= link_to 'Logout', login_path, method: :delete %>
 
-<img src="http://fillmurray.com/800/600" alt="">
+<h3><strong>Profile: </strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></h3>
+<br>
+
+<% @bmi = @current_user.weight / (@current_user.height * @current_user.height) %>
+<div class="container" id="user_stats">
+    <div class="row">
+        <div class="col-md-3" style="background-color:lavender;"><strong>AGE:</strong><em> <%= @current_user.age %>  </em></div>
+        <div class="col-md-3" style="background-color:lightgreen;"><strong>Height:</strong><em> <%= @current_user.height %></em></div>
+        <div class="col-md-3" style="background-color:lightblue;"><strong>Weight: </strong><em><%= @current_user.weight %> </em></div>
+        <div class="col-md-3" style="background-color:lightyellow;"><strong>BMI: </strong><em><%= @bmi.round(2) %> </em></div>
+    </div>
+    <h3>Plan: </h3>
+    <div class="row">
+    <div class="col-sm-4 col-md-10" style="background-color:yellow;">CALENDER - Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure voluptatem reprehenderit reiciendis voluptatum expedita aspernatur recusandae, quae vel quos, molestias voluptas veritatis quia tempora molestiae? Blanditiis cum, dolor eius dolores.</div>
+    </div>
+
+    <h3>Create Quick Workout: </h3>
+    <div class="row">
+    <div class="col-md-3" style="background-color:aqua;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
+    <div class="col-md-3" style="background-color:lime;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
+    <div class="col-md-3" style="background-color:teal;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
+    <div class="col-md-3" style="background-color:orange;">em provident maiores, modi velit minima temporibus, accusamus sunt voluptatem iure doloribus porro.</div>
+  </div>
+</div>

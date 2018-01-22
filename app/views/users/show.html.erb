@@ -1,0 +1,15 @@
+<%= link_to 'Edit Account', edit_user_path(@current_user.id) %>|
+<%= link_to 'Logout', login_path, method: :delete %>
+
+<h3>Profile: <%= @current_user.name%></h3>| <%= image_tag @current_user.avatar %>
+<br>
+
+<% @bmi = @current_user.weight / (@current_user.height * @current_user.height) %>
+<div class="container" id="user_stats">
+    <div class="row">
+        <div class="col-md-3">AGE: <%= @current_user.age %>  </div>
+        <div class="col-md-3">Height: <%= @current_user.height %></div>
+        <div class="col-md-3">Weight: <%= @current_user.weight %> </div>
+        <div class="col-md-3">BMI: <%= @bmi.round(2) %> </div>
+    </div>
+</div>

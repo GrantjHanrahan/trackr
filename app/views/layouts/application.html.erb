@@ -6,6 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -13,16 +21,17 @@
    <hr>
    <nav>
      <% if @current_user.present? %>
-        <%= @current_user.name %>
-        |
-        <%= link_to 'Logout', login_path, method: :delete %>
+        <%#= @current_user.name %>
+        
+        <%#= link_to 'Logout', login_path, method: :delete %>
      <% else %>
        <%= link_to ' Login ', login_path %>|
-       <%= link_to ' Home ', '/ '%>|
-       <%= link_to ' Register ', '/pages/new' %>
+       <%= link_to ' Home ', root_path %>|
+       <%= link_to ' Register ', new_user_path %>
 
      <% end %>
    </nav>
+
    <%= yield %>
  </body>
 

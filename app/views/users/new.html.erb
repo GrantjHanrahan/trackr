@@ -1,0 +1,29 @@
+<h1>Register</h1>
+
+<% if flash[:errors].present? %>
+  <strong>Please correct the following errors with your registration:</strong>
+  <ol>
+  <% flash[:errors].each do |e| %>
+    <li><%= e %></li>
+  <% end %>
+  </ol>
+<% end %>
+
+
+<%= form_for User.new do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <br>
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  <br>
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  <br>
+  <%= f.submit 'Register' %>
+  <div id="calendar">
+    should be a calendar here
+
+  </div>
+<% end %>
