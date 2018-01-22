@@ -22,15 +22,16 @@ form{
 }
 
 #db-workouts{
-  margin: 10%;
+  margin: 7%;
   // padding: 5%;
 }
-#db-workouts h3{
+#db-workouts h4{
   color: lightgreen;
+  font-weight: 700;
   // text-decoration: underline;
 }
 
-#db-workouts h3:hover{
+#db-workouts h4:hover{
   color: orangered;
   text-decoration: none;
 }
@@ -40,20 +41,21 @@ small{
   font-size: 70%;
 }
 
-.col-md-4{
+.col-md-3{
   padding: 1px 3px;
   margin-left: 2%;
   margin-right: 2%;
-  // border: solid 1px white;
-  background-color: rgba(112, 112, 112, 0.4);
+  // background-color: rgba(112, 112, 112, 0.4);
+  background-color: rgba(lightsteelblue, 0.4);
   color: white;
   border-radius: 8%;
 }
-.col-md-4 img{
-  width: 26vw;
-  height: 37vh;
+.col-md-3 img{
+  width: 19vw;
+  height: 30vh;
   border: 1px solid white;
   border-radius: 4%;
+  opacity: 0.9;
 }
 #planner{
   margin-left: 20%;
@@ -65,22 +67,9 @@ small{
   height: 46vh;
 }
 
-// .edit_user{
-//     background-color: rgba(11, 8, 8, 0.3);
-//     margin-left: 14%;
-//     margin-right: 14%;
-//     margin-top: 3%;
-//     padding:5px;
-//     color: white;
-//     font-size: 130%;
-//     text-align: center;
-//   }
-//
-//   .edit_user fieldset, label{
-//     padding: 4px;
-//     color: white;
-//   }
-//
-//   .edit_user .submit{
-//     background-color: black;
-//   }
+footer{
+  text-align: center;
+  background-color: rgba(black, 0.6);
+  padding: 1%;
+  min-height: 10%;
+}

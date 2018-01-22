@@ -1,7 +1,7 @@
 <%= link_to 'Edit Account ', edit_user_path(@current_user.id) %>  |
 <%= link_to ' Logout', login_path, method: :delete %>
 
-<h3><strong>Profile: </strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></h3>
+<h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></strong></h3>
 <br>
 
 <% @bmi = @current_user.weight / (@current_user.height * @current_user.height) %>
@@ -25,12 +25,18 @@
 
 <div class="container text-center" id="db-workouts">
     <div class="row">
-    <div class="col-md-4">
-      <h3>Create New Workout</h3><br>
+    <div class="col-md-3">
+      <!-- <h3>Create New Workout</h3> -->
+      <h4><%= link_to 'Create New Workout', new_workout_path(@current_user.id) %> </h4><br>
       <%= image_tag 'trail-run.jpg'%><br>
       <small><i>Photo by David Marcu on Unsplash</i></small></div>
-    <div class="col-md-4">
-      <h3>View Previous Workouts</h3><br>
+    <div class="col-md-3">
+    <h4><%= link_to 'Edit Existing Workout', workout_path(@current_user.id) %> </h4><br>
+    <%= image_tag 'ropes.jpg'%><br>
+    <small><i>Photo by Scott Webb on Unsplash</i></small></div>
+    <div class="col-md-3">
+      <!-- <h4>View Previous Workouts</h4><br> -->
+      <h4><%= link_to 'Previous Workouts', workout_path(@current_user.id) %></h4><br>
       <%= image_tag 'resting.jpg'%><br>
       <small><i>Photo by Ben Blennerhassett on Unsplash</i></small></div>
   </div>
