@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'pages#home'
@@ -13,9 +12,14 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :workouts
+  resources :workouts do
+    resources :activities
+  end
+
+  # post '/workouts/new/:activity_type' => 'workouts#create', as: :new_workout_with_activity
+  # post '/workouts/:workout_id/:activity_type' => 'workouts#update', as: :add_activity_to_workout
+  # resources :activities
 
   get '/profile' => 'pages#profile'
   # get '/admin'   => 'pages#admin_party'
-
 end

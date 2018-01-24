@@ -1,7 +1,159 @@
-<%= link_to ' Home ', profile_path(@current_user.id) %>   |
+
+
+
+<% if @current_user.present? %>
+
+<%= link_to ' Home ', profile_path(@current_user.id)  %>   |
 <%= link_to ' Logout', login_path, method: :delete %>
 
 <h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></strong></h3>
-<br>
 
-<h4>Edit Workout: </h4>
+<% end %>
+
+<% if flash[:errors] %>
+  <strong>Please correct the following errors:</strong>
+  <ol>
+  <% flash[:errors].each do |e| %>
+    <li><%= e %></li>
+  <% end %>
+  </ol>
+<% end %>
+
+<br>
+<div class ="workout_name">
+  <%= form_for Workout.new do |f| %>
+    <h4><strong><%= f.label 'Workout Name : ' %></strong>
+    <%= f.text_field :workout_name %></h4>
+
+    <%#= select_tag(:activity_type, options_for_select([['Run', 1], ['Walk', 2], ['Swimming', 3], ['HIIT', 4], ['Strength', 5], ['Cycle', 6], ['Team Sport', 7], ['Water Sport', 8], ['Hiking', 9]], selected: :activity_type )) %>
+
+    <div class="container" id="activity_selector">
+        <div class="row"><h3>Activity 1</h3>
+            <div class="col-md-3">
+            <select name="activity[][activity_type]">
+              <option value="" disabled selected>Activity name</option>
+              <option style="display:none;"></option>
+              <option value="run">Run</option>
+              <option value="walk">Walk</option>
+              <option value="swim">Swimming</option>
+              <option value="hiit">HIIT</option>
+              <option value="strength">Strength</option>
+              <option value="cycle">Cycle</option>
+              <option value="team">Team Sport</option>
+              <option value="water_sports">Water Sport</option>
+              <option value="hiking">Hiking</option>
+            </select>
+            </div>
+            <div class="col-md-3">
+            <select name="activity[][distance]">
+              <option value="" disabled selected>Distance (km)</option>
+              <option style="display:none;"></option>
+              <option value=0-5> &lt; 5</option>
+              <option value=10-20>&gt; 5 &lt; 10</option>
+              <option value=20> &gt; 10 &lt; 20</option>
+              <option value=30>&gt; 20 &lt; 30</option>
+              <option value=40>&gt; 30</option>
+            </select>
+            </div>
+            <div class="col-md-3">
+              <select name="activity[][length]">
+                <option value="" disabled selected>Duration (mins)</option>
+                <option style="display:none;"></option>
+                <option value=30>30 mins &gt; </option>
+                <option value=60> &lt; 60 mins  </option>
+                <option value=60> 60 mins > </option>
+              </select>
+            </div>
+        </div>
+        <div class="row"><h3>Activity 2</h3>
+            <div class="col-md-3">
+              <select name="activity[][activity_type]">
+                <option value="" disabled selected>Activity name</option>
+                <option style="display:none;"></option>
+                <option value="run">Run</option>
+                <option value="walk">Walk</option>
+                <option value="swim">Swimming</option>
+                <option value="hiit">HIIT</option>
+                <option value="strength">Strength</option>
+                <option value="cycle">Cycle</option>
+                <option value="team">Team Sport</option>
+                <option value="water_sports">Water Sport</option>
+                <option value="hiking">Hiking</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <select name="activity[][distance]">
+                <option value="" disabled selected>Distance (km)</option>
+                <option style="display:none;"></option>
+                <option value=0> &lt; 5</option>
+                <option value=10>&gt; 5 &lt; 10</option>
+                <option value=20> &gt; 10 &lt; 20</option>
+                <option value=30>&gt; 20 &lt; 30</option>
+                <option value=40>&gt; 30</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <select name="activity[][length]">
+                <option value="" disabled selected>Duration (mins)</option>
+                <option style="display:none;"></option>
+                <option value=30>30 mins < </option>
+                <option value=60>60 mins < </option>
+                <option value=60> 60 mins > </option>
+              </select>
+            </div>
+        </div>
+        <div class="row"><h3>Activity 3</h3>
+            <div class="col-md-3">
+              <select name="activity[][activity_type]">
+                <option value="" disabled selected>Activity name</option>
+                <option style="display:none;"></option>
+                <option value="run">Run</option>
+                <option value="walk">Walk</option>
+                <option value="swim">Swimming</option>
+                <option value="hiit">HIIT</option>
+                <option value="strength">Strength</option>
+                <option value="cycle">Cycle</option>
+                <option value="team">Team Sport</option>
+                <option value="water_sports">Water Sport</option>
+                <option value="hiking">Hiking</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <select name="activity[][distance]">
+                <option value="" disabled selected>Distance (km)</option>
+                <option style="display:none;"></option>
+                <option value=0> &lt; 5</option>
+                <option value=10>&gt; 5 &lt; 10</option>
+                <option value=20> &gt; 10 &lt; 20</option>
+                <option value=30>&gt; 20 &lt; 30</option>
+                <option value=40>&gt; 30</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <select name="activity[][length]">
+                <option value="" disabled selected>Duration (mins)</option>
+                <option style="display:none;"></option>
+                <option value=30>30 mins < </option>
+                <option value=60>60 mins < </option>
+                <option value=60> 60 mins > </option>
+              </select>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5">
+          </div>
+
+        </div>
+
+    <div class="col-md-3">
+      <%= submit_tag 'Create Workout' %>
+    </div>
+
+  <% end %><%# end form tag %>
+</div>
+
+
+<!-- value="<%#= activitytype %>" -->
+
+
+</div>

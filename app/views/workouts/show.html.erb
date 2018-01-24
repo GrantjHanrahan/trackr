@@ -1,16 +1,82 @@
+
+
 <%= link_to ' Home ', profile_path(@current_user.id) %>   |
-<%= link_to ' Logout', login_path, method: :delete %>
+<%= link_to ' Logout', login_path, method: :delete %> |
+<%= link_to ' Edit Workout ', edit_workout_path %>
 
 <h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></strong></h3>
 <br>
 
+<!-- <h2><%#= @workout.workout_name %></h2>
+
+<%# @workout.activities.each do |activity| %>
+  <%#= activity.activity_type %><br>
+<%# end %> -->
+
+
 <div class="workouts">
-  <h4>Your Previous Workouts:</h4>
+  <!-- <h3>Your Current Workout: </h3>
+  <h4><%#= @workout.workout_name %></h4>
+
+  <%# @workout.activities.each do |activity| %>
+    <%#= activity.activity_type %><br>
+    <%#= activity.distance %><br> -->
+    <%#= activity.length %>
+  <%# end %>
+
+  <h3><strong>Your Previous Workouts :</strong></h3>
     <ul>
       <% @current_user.workouts.each do |w| %>
-        <li><%= link_to w.workout_name, w %></li>
-        <li><%= link_to w.date, w %></li><br>
+        <li><%=  w.workout_name %></li>
+        <li><%= w.date %></li>
+        <% @current_user.activities.each do |w| %>
+
+        <li><%=  w.activity_type %></li>
+        <li><%=  w.distance %></li>
+        <li><%=  w.length %></li>
+
+          <% end %>
+
         <% end %>
     </ul>
 
 </div>
+
+
+
+
+<!-- <style>
+  #map{
+    width:100%;
+    height:400px;
+  }
+</style> -->
+<!-- <div id="map">
+  </div>
+  <script>
+  var dog_locations = <%#= @dogs.pluck(:latitude,:longitude).to_json %>;
+
+  // var map;
+        function initMap() {
+          // var uluru = {lat: <%#= @activity.last.latitude %>, lng: <%#= @activity.last.longitude %> }
+          var map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+          });
+
+          for( let i=0; i< dog_locations.length; i++){
+            let dog = dog_locations[i];
+            new google.maps.Marker({
+              position: {
+                let: dog[0],
+                lng: dog[1]
+              },
+              map:map
+            });
+          }
+        }
+</script>
+
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoAQ-eYXFkllOuv6-skFDVrrh8ySUCEZo&callback=initMap" type="text/javascript">
+</script> -->

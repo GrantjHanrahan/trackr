@@ -58,3 +58,9 @@ gem 'annotate'
 gem 'jquery-rails'
 gem 'fullcalendar-rails'
 gem 'momentjs-rails'
+gem 'geocoder'
+gem 'cloudinary'
+gem 'open-weather'
+gem "bootstrap_form",
+    git: "https://github.com/bootstrap-ruby/rails-bootstrap-forms.git",
+    branch: "master"

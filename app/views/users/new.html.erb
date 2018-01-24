@@ -1,13 +1,15 @@
 <h3><strong>Register</strong></h3>
 
-<% if flash[:errors].present? %>
-  <strong>Please correct the following errors with your registration:</strong>
-  <ol>
-  <% flash[:errors].each do |e| %>
-    <li><%= e %></li>
+<span class="errors">
+  <% if flash[:errors].present? %>
+    <strong>Please correct the following errors with your registration:</strong>
+    <ol>
+    <% flash[:errors].each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+    </ol>
   <% end %>
-  </ol>
-<% end %>
+</span>
 
 <div class="user">
 <%= form_for User.new do |f| %>
@@ -22,7 +24,7 @@
   <%= f.password_field :password %>
   <br>
   <%= f.label 'Avatar : ' %>
-  <%= f.url_field :avatar %>
+  <%= f.text_field :avatar %>
   <br>
   <%= f.submit 'Submit' %>
 

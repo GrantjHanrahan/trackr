@@ -29,7 +29,10 @@
       <h3><%= link_to 'Workouts', new_workout_path(@current_user.id) %> </h3><br>
       <%= image_tag 'trail-run.jpg'%><br>
       <small><i>Photo by David Marcu on Unsplash</i></small></div>
-
+      <div class="col-md-3">
+      <h4><%= link_to 'Edit Existing Workout', workout_path(@current_user.id) %> </h4><br>
+      <%= image_tag 'ropes.jpg'%><br>
+      <small><i>Photo by David Marcu on Unsplash</i></small></div>
     <div class="col-md-4">
       <h3><%= link_to 'View Previous Workouts', "/workouts/#{@current_user.id}/show" %></h3><br>
       <%= image_tag 'resting.jpg'%><br>
