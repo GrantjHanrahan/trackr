@@ -1,6 +1,6 @@
 
 
-<h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></strong></h3>
+<h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar, class: "avatar" %></strong></h3>
 <br>
 
 <% @bmi = @current_user.weight / (@current_user.height * @current_user.height) %>

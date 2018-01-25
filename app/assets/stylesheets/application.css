@@ -40,7 +40,7 @@ h1{
   color:orangered;
   font-size: 350%;
 }
- img{
+ .avatar{
    width: 2.5vw;
    height: 5vh;
  }
@@ -96,4 +96,8 @@ ul {
 
 #map {
   height: 100%;
+}
+
+.logo{
+  width: 180px;
 }

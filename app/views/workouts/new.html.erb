@@ -6,19 +6,28 @@
 <%#= link_to ' Home ', profile_path(@current_user.id)  %>
 <%#= link_to ' Logout', login_path, method: :delete %>
 
-<h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar %></strong></h3>
+<h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar, class: "avatar" %></strong></h3>
 
 <%# end %>
 
 
 
 <br>
+<div class="container" id="activity_selector">
+
 <div class ="workout_name">
+
   <%= form_for Workout.new do |f| %>
     <h4><strong><%= f.label 'Workout Name : ' %></strong>
     <%= f.text_field :workout_name %></h4>
 
-    <div class="container" id="activity_selector">
+    <h4><strong><%= f.label 'Date : ' %></strong>
+      <%= f.date_field :date %></h4>
+    <!-- <div class="container" id="activity_selector"> -->
+
+        <!-- <div class="row">
+          <div class="col-md-3">
+          </div> -->
         <div class="row"><h3>Activity 1</h3>
             <div class="col-md-3">
             <select name="activity[][activity_type]">
