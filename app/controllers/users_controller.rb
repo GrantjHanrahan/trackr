@@ -5,7 +5,11 @@ class UsersController < ApplicationController
   def create
 
     user = User.create user_params
+    height = user.height.to_f
+    weight = user.weight.to_f
+    @bmi = weight / (height * height)
     if user.persisted?
+
       # Log the user in automatically
       session[:user_id] = user.id
       redirect_to profile_path
@@ -35,8 +39,7 @@ class UsersController < ApplicationController
 
   private
   def user_params
-    params.require(:user).permit(:name, :email, :password)
-    # add a password_confirmation
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :avatar, :age, :height, :weight)
   end
   private
   def user_account_params

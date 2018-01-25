@@ -3,9 +3,6 @@
   <head>
     <title>Project1</title>
     <%= csrf_meta_tags %>
-
-
-
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <!-- jQuery library -->
@@ -23,18 +20,29 @@
   <body>
    <h1>TRACKR</h1>
    <hr>
+
    <nav>
-     <% if @current_user.present? %>
-        <%#= @current_user.name %>
+   <% if @current_user.present? %>
+     <%= link_to ' Home ', profile_path(@current_user.id) %>   |
+     <%= link_to ' Logout', login_path, method: :delete %> |
 
-        <%#= link_to 'Logout', login_path, method: :delete %>
      <% else %>
-       <%= link_to ' Login ', login_path %>|
-       <%= link_to ' Home ', root_path %>|
-       <%= link_to ' Register ', new_user_path %>
-
+       <nav>
+         <%= link_to ' Login ', login_path %>|
+         <%= link_to ' Home ', root_path %> |
+         <%= link_to ' Register ', new_user_path %>
+       </nav>
      <% end %>
-   </nav>
+
+   <% if flash[:errors] %>
+     <strong>Please correct the following errors:</strong>
+     <ol>
+     <% flash[:errors].each do |e| %>
+       <li><%= e %></li>
+     <% end %>
+     </ol>
+   <% end %>
+
 
    <%= yield %>
    <footer>
