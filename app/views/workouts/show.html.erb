@@ -3,20 +3,13 @@
 <h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar, class: "avatar" %></strong></h3>
 
 <div class="workouts">
-  <!-- <h3>Your Current Workout: </h3>
-  <h4><%#= @workout.workout_name %></h4>
 
-  <%# @workout.activities.each do |activity| %>
-    <%#= activity.activity_type %><br>
-    <%#= activity.distance %><br> -->
-    <%#= activity.length %>
-  <%# end %>
 
   <h3><strong>Your Previous Workouts :</strong></h3>
     <ul>
       <% @current_user.workouts.each do |w| %>
 
-        <li><%= w.workout_name %></li>
+        <li><%= link_to w.workout_name, "/workouts/#{w.id}/edit" %></li>
         <li><%= w.date %></li>
 
       <% w.activities.each do |a| %>

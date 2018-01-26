@@ -12,6 +12,7 @@ class WorkoutsController < ApplicationController
     # workout.activities.create activity_type: params[:activity_type]
     # raise 'hell'
 
+    # create workout working code ---------------------------
     workout = Workout.new workout_params
     workout.user = @current_user
     if workout.save
@@ -33,32 +34,41 @@ class WorkoutsController < ApplicationController
       flash[:errors] = workout.errors.full_messages
       redirect_to new_workout_path
     end
+    #------------------------------------------------------
+
 # raise 'hell'
     # workout = @current_user.workouts.create workout_params
     # if workout.persisted?
   end
 
   def show
-    # @date = workout.date.strftime("%m/%d/%Y")
     # @workout = Workout.find params[:id]
-    # @user = @current_user.workouts
-    # @user = User.find params[:id]
-     # @workout = Workout.find_by [:user_id]
-     # @current_activity = Activity.find_by [:workout_id]
-     # @current_user = User.find params[:id]
-    # @activities = @user.@workout.activities
   end
 
   def index
+    @workouts = Workout.all
   end
 
   def edit
+    @workout = Workout.find params[:id]
+    # @workout = Workout.find_by params[:workout_name]
+    # if @workout.persisted?
+    @activity = Activity.find_by params[:workout_name], [:distance], [:length]
+
+    # end
+
   end
 
   def update
+    workout = Workout.find params[:id]
+    workout.update workout_params
+    redirect_to workout
+
   end
 
   def destroy
+    Workout.destroy params[:id]
+    redirect_to workouts_path
   end
 
 private
@@ -70,4 +80,6 @@ private
     # we need to pass in a specific activity from the form for this
     activity.permit(:activity_type, :distance, :length)
   end
+
+
 end

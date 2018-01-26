@@ -1,0 +1,42 @@
+<h2>Your Workout</h2>
+
+<div class="workouts">
+  <div class="submits">
+    <%= link_to 'View All', workout_path %> |
+    <%= link_to 'Delete', workout_path( @workout ), method: 'delete' %>
+  </div>
+  <!-- <h4><%#= @current_user.name %></h4><br>
+  <h4><%#= @workout.workout_name %></h4><br>
+  <h5><%#= @activity.activity_type %></h5><br> -->
+
+<%= form_for @workout do |f| %>
+  <fieldset>
+    <%= f.label :workout_name %>
+    <%= f.text_field :workout_name %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :date %>
+    <%= f.date_field :date%>
+  </fieldset>
+  <%= f.submit %>
+<% end %>
+
+<br>
+
+<%= form_for [@workout, @activity] do |f| %>
+  <fieldset>
+    <%= f.label :activity_type %>
+    <%= f.text_field :activity_type %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :distance %>
+    <%= f.number_field :distance %>
+  </fieldset>
+  <fieldset>
+    <%= f.label :length %>
+    <%= f.number_field :length %>
+  </fieldset>
+  <%= f.submit %>
+<% end %>
+
+</div>
