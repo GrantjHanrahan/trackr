@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     resources :activities
   end
 
+  resources :plans
+
   # post '/workouts/new/:activity_type' => 'workouts#create', as: :new_workout_with_activity
   # post '/workouts/:workout_id/:activity_type' => 'workouts#update', as: :add_activity_to_workout
   # resources :activities

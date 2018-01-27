@@ -1,33 +1,22 @@
 
-
-
-<%# if @current_user.present? %>
-
-<%#= link_to ' Home ', profile_path(@current_user.id)  %>
-<%#= link_to ' Logout', login_path, method: :delete %>
-
 <h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar, class: "avatar" %></strong></h3>
-
-<%# end %>
-
 
 
 <br>
 <div class="container" id="activity_selector">
 
-<div class ="workout_name">
+<div class="row" id="workout_name">
+  <div class="col-md-4">
+    <%= form_for Workout.new do |f| %>
+      <h5><strong><%= f.label 'Workout Name : ' %></strong>
+      <%= f.text_field :workout_name %></h5>
+  </div>
+  <div class="col-md-4">
+    <h5><strong><%= f.label 'Date : ' %></strong>
+      <%= f.date_field :date %></h5>
+  </div>
+</div>
 
-  <%= form_for Workout.new do |f| %>
-    <h4><strong><%= f.label 'Workout Name : ' %></strong>
-    <%= f.text_field :workout_name %></h4>
-
-    <h4><strong><%= f.label 'Date : ' %></strong>
-      <%= f.date_field :date %></h4>
-    <!-- <div class="container" id="activity_selector"> -->
-
-        <!-- <div class="row">
-          <div class="col-md-3">
-          </div> -->
         <div class="row"><h3>Activity 1</h3>
             <div class="col-md-3">
             <select name="activity[][activity_type]">
@@ -46,23 +35,45 @@
             <div class="col-md-3">
             <select name="activity[][distance]" id="distance_select">
               <option value="" disabled selected>Distance (km)</option>
-              <option value=5> &lt; 5</option>
-              <option value=10-20>&gt; 5 &lt; 10</option>
-              <option value=20> &gt; 10 &lt; 20</option>
-              <option value=30>&gt; 20 &lt; 30</option>
-              <option value=40>&gt; 30</option>
+              <option value=1> 1</option>
+              <option value=2> 2</option>
+              <option value=3> 3</option>
+              <option value=4> 4</option>
+              <option value=5> 5</option>
+              <option value=6> 6</option>
+              <option value=7> 7</option>
+              <option value=8> 8</option>
+              <option value=9> 9</option>
+              <option value=10> 10</option>
+              <option value=15> &lt; 15</option>
+              <option value=20> &lt; 20</option>
+              <option value=25> &lt; 25</option>
+              <option value=30> &lt; 30</option>
+              <option value=35> &lt; 35</option>
+              <option value=40> &lt; 40</option>
+              <option value=45> &lt; 45</option>
+              <option value=50> &lt; 50</option>
+              <option value=50+> &gt; 50</option>
             </select>
             </div>
             <div class="col-md-3">
               <select name="activity[][length]">
                 <option value="" disabled selected>Duration (mins)</option>
-                <option value=30>30 mins &gt; </option>
-                <option value=60> &lt; 60 mins  </option>
-                <option value=60> 60 mins > </option>
+                <option value=15> 15 </option>
+                <option value=30> 30  </option>
+                <option value=45> 45 </option>
+                <option value=60> 60 </option>
+                <option value=90> 90  </option>
+                <option value=120> 120 </option>
+                <option value=150> 150  </option>
+                <option value=180> &gt; 180 </option>
               </select>
             </div>
+            <div class="col-md-1" id="add1">
+              <%= button_tag 'Add' %>
+            </div>
         </div>
-        <div class="row"><h3>Activity 2</h3>
+        <div class="row" style="display : none" id="Act2"><h3>Activity 2</h3>
             <div class="col-md-3">
               <select name="activity[][activity_type]">
                 <option value="" disabled selected>Activity name</option>
@@ -80,23 +91,48 @@
             <div class="col-md-3">
               <select name="activity[][distance]">
                 <option value="" disabled selected>Distance (km)</option>
-                <option value=0> &lt; 5</option>
-                <option value=10>&gt; 5 &lt; 10</option>
-                <option value=20> &gt; 10 &lt; 20</option>
-                <option value=30>&gt; 20 &lt; 30</option>
-                <option value=40>&gt; 30</option>
+                <option value=1> 1</option>
+                <option value=2> 2</option>
+                <option value=3> 3</option>
+                <option value=4> 4</option>
+                <option value=5> 5</option>
+                <option value=6> 6</option>
+                <option value=7> 7</option>
+                <option value=8> 8</option>
+                <option value=9> 9</option>
+                <option value=10> 10</option>
+                <option value=15> &lt; 15</option>
+                <option value=20> &lt; 20</option>
+                <option value=25> &lt; 25</option>
+                <option value=30> &lt; 30</option>
+                <option value=35> &lt; 35</option>
+                <option value=40> &lt; 40</option>
+                <option value=45> &lt; 45</option>
+                <option value=50> &lt; 50</option>
+                <option value=50+> &gt; 50</option>
               </select>
             </div>
             <div class="col-md-3">
               <select name="activity[][length]">
                 <option value="" disabled selected>Duration (mins)</option>
-                <option value=30>30 mins < </option>
-                <option value=60>60 mins < </option>
-                <option value=60> 60 mins > </option>
+                <option value=15> 15 </option>
+                <option value=30> 30  </option>
+                <option value=45> 45 </option>
+                <option value=60> 60 </option>
+                <option value=90> 90  </option>
+                <option value=120> 120 </option>
+                <option value=150> 150  </option>
+                <option value=180> &gt; 180 </option>
               </select>
             </div>
+            <div class="col-md-1" id="add2">
+              <%= button_tag 'Add' %>
+            </div>
+            <div class="col-md-1" id="remove2">
+              <%= submit_tag 'Remove' %>
+            </div>
         </div>
-        <div class="row"><h3>Activity 3</h3>
+        <div class="row" style="display : none" id="Act3"><h3>Activity 3</h3>
             <div class="col-md-3">
               <select name="activity[][activity_type]">
                 <option value="" disabled selected>Activity name</option>
@@ -115,22 +151,43 @@
             <div class="col-md-3">
               <select name="activity[][distance]">
                 <option value="" disabled selected>Distance (km)</option>
-                <!-- <option style="display:none;"></option> -->
-                <option value=0> &lt; 5</option>
-                <option value=10>&gt; 5 &lt; 10</option>
-                <option value=20> &gt; 10 &lt; 20</option>
-                <option value=30>&gt; 20 &lt; 30</option>
-                <option value=40>&gt; 30</option>
+                <option value=1> 1</option>
+                <option value=2> 2</option>
+                <option value=3> 3</option>
+                <option value=4> 4</option>
+                <option value=5> 5</option>
+                <option value=6> 6</option>
+                <option value=7> 7</option>
+                <option value=8> 8</option>
+                <option value=9> 9</option>
+                <option value=10> 10</option>
+                <option value=15> &lt; 15</option>
+                <option value=20> &lt; 20</option>
+                <option value=25> &lt; 25</option>
+                <option value=30> &lt; 30</option>
+                <option value=35> &lt; 35</option>
+                <option value=40> &lt; 40</option>
+                <option value=45> &lt; 45</option>
+                <option value=50> &lt; 50</option>
+                <option value=50+> &gt; 50</option>
               </select>
             </div>
             <div class="col-md-3">
               <select name="activity[][length]">
                 <option value="" disabled selected>Duration (mins)</option>
-                <!-- <option style="display:none;"></option> -->
-                <option value=30>30 mins < </option>
-                <option value=60>60 mins < </option>
-                <option value=60> 60 mins > </option>
+                <option value="" disabled selected>Duration (mins)</option>
+                <option value=15> 15 </option>
+                <option value=30> 30  </option>
+                <option value=45> 45 </option>
+                <option value=60> 60 </option>
+                <option value=90> 90  </option>
+                <option value=120> 120 </option>
+                <option value=150> 150  </option>
+                <option value=180> &gt; 180 </option>
               </select>
+            </div>
+            <div class="col-md-1" id="remove3">
+              <%= submit_tag 'Remove' %>
             </div>
         </div>
         <div class="row">
@@ -139,7 +196,7 @@
 
         </div>
 
-    <div class="col-md-3">
+    <div class="create">
       <%= submit_tag 'Create Workout' %>
     </div>
 

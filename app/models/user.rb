@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :workouts
 
   has_many :activities, through: :workouts
+  has_many :plans
 
   validates :email, presence: true
 end

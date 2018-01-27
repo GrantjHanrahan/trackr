@@ -13,16 +13,6 @@
     </div>
   </div>
 
-  <div class="container" id="planner">
-    <h3>Planner: </h3>
-    <div class="row">
-      <div class="col-md-5" id="schedule">
-        <%= image_tag 'cal.jpg'%>
-      </div>
-      <div class="col-md-3" id="weather">
-        <%= image_tag 'wicons.png'%>
-      </div>
-</div>
 
 <div class="container text-center" id="db-workouts">
     <div class="row">
@@ -37,5 +27,33 @@
       <h4><%= link_to 'Previous Workouts', workout_path(@current_user.id) %></h4><br>
       <%= image_tag 'resting.jpg'%><br>
       <small><i>Photo by Ben Blennerhassett on Unsplash</i></small></div>
+  </div>
+</div>
+
+
+
+<div class="container" id="planner">
+  <div class="row">
+    <h3>Create a Workout Plan: </h3>
+    <div class="col-md-4">
+      <%= form_for Plan.new do |f| %>
+        <strong><%= f.label 'Start Date : ' %></strong>
+        <%= f.date_field :start %>
+
+    </div>
+      <div class="col-md-4">
+        <strong><%= f.label 'End Date : ' %></strong>
+        <%= f.date_field :end %>
+      <% end %>
+      </div>
+  </div>
+</div>
+
+<div class="container">
+  <h3>Weather: </h3>
+    <div class="row">
+      <div class="col-md-3" id="weather">
+        <%= image_tag 'wicons.png'%>
+      </div>
   </div>
 </div>

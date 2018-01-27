@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require rails-ujs
+//= require jquery3
+//= require jquery_ujs
 //= require_tree .
 //= require moment
 // = require fullcalendar
@@ -29,3 +31,31 @@ $('#calendar').fullCalendar({
 // });
 //
 // $('#distance_select').on('click', distances)
+
+$(document).ready(function() {
+
+
+  $('#add1').click(function(event) {
+         event.preventDefault();
+         $('#Act2').show();
+      // alert("Add button");
+    });
+
+  $('#remove2').click(function(event){
+    event.preventDefault();
+    $('#Act2').hide();
+  });
+
+  $('#add2').click(function(event) {
+         event.preventDefault();
+         $('#Act3').show();
+      // alert("Add button");
+    });
+
+    $('#remove3').click(function(event){
+      event.preventDefault();
+      $('#Act3').hide();
+    });
+
+
+});

@@ -91,10 +91,25 @@
   padding-top: 3px;
 }
 
-#workout_name{
-  position:fixed;
-  display: inline;
+#workout_name h5{
+  color: black;
 }
+#workout_name strong{
+  color:white;
+  font-size: 110%;
+}
+
+#workout_name .col-md-4{
+  background-color: inherit;
+  margin-left: 8%;
+  font-weight: 600;
+  margin-top: 2%;
+}
+
+#workout_name text_field{
+  color:black;
+}
+
 
 #activity_selector h3{
   color: orangered;
@@ -106,4 +121,17 @@
   margin-left: 5%;
   margin-bottom: 5%;
   padding:10px;
+}
+
+.create{
+  margin-bottom: 5%;
+  padding: 5px;
+  font-size: 110%;
+  font-weight: 700;
+
+}
+
+.create :hover{
+  background-color: orangered;
+  border: solid 1px lightyellow;
 }
