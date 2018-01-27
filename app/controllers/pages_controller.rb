@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   before_action :check_if_logged_in, only: [:profile]
   # could also do 'except: [:home]'
 
-  # before_action :check_if_admin, only: [:admin_party]
+  before_action :check_if_admin, only: [:admin_party]
 
   def home
   end
@@ -22,9 +22,10 @@ class PagesController < ApplicationController
     # only visible to logged-in users
   end
 
-  # def admin_party
-  #   # only admins get to party
-  # end
+  def admin_view
+    @users = User.all 
+    # only admins get to party
+  end
 
 
 

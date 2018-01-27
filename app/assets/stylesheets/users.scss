@@ -24,9 +24,13 @@ form{
 
 #db-workouts .row{
   margin-top: 7%;
-  // margin-left: 0 !important;
+  // margin-left: 5%;
   width: 100%;
   background-color: rgba(black, 0.4);
+}
+#db-workouts .col-md-4{
+  margin-left: 10%;
+
 }
 #db-workouts h4{
   color: lightgreen;
@@ -35,11 +39,13 @@ form{
   // text-decoration: underline;
 }
 
-#db-workouts .col-md-4{
-  margin-left: 7%;
-  margin-right: 7%;
-  margin-top: 1%;
-  margin-bottom: 8%;
+#admin .col-md-4{
+  margin-left: 12%;
+  margin-right: 12%;
+  margin-top: 4%;
+  margin-bottom: 4%;
+  width: 75%;
+  background-color: rgba(black, 0.2);
 }
 .col-md-4 img{
   width: 24vw;
@@ -47,6 +53,23 @@ form{
   border: 1px solid white;
   border-radius: 4%;
   opacity: 0.9;
+}
+
+#admin ul{
+  text-align: center;
+  font-size: 170%;
+  color:white;
+}
+
+#admin .row{
+    margin-top: 7%;
+    margin-bottom: 10%;
+    width: 100%;
+    background-color: rgba(black, 0.5);
+}
+
+#links {
+  font-size: 70%;
 }
 
 #planner .row{
@@ -65,7 +88,7 @@ form{
   font-size: 150%;
 }
 
-#planner strong{
+#planner strong, #admin h3{
   color: orangered;
   font-weight: 1100;
   font-size: 120%;
@@ -75,18 +98,10 @@ form{
   text-align: center;
 }
 
-
-// #schedule img{
-//   width: 38vw;
-//   height: 40vh;
-// }
-
 #weather img{
   width: 24vw;
   height: 33vh;
 }
-
-
 
 footer{
   text-align: center;

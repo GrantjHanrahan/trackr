@@ -1,0 +1,19 @@
+
+<div class="container text-center" id="admin">
+  <div class="row">
+    <div class="col-md-4">
+      <ul>
+        <h3><strong>All Users</strong></h3><br>
+      <% @users.each do |u| %>
+        <li><%= u.name %></li>
+        <li><%= u.email %></li>
+        <li id="links"><%= link_to 'Edit', edit_user_path(u.id) %> |
+            <%= link_to 'Delete', user_path(u.id), method: 'delete' %>
+        </li>
+        <br>
+        <% end %>
+    </div>
+  </ul>
+</div>
+
+</div>

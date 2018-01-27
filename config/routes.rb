@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/pages/new' => 'pages#new'
   post 'pages' => 'pages#create'
 
+
   get '/login' => 'session#new'
   post '/login' => 'session#create'
   delete '/login' => 'session#destroy'
@@ -23,5 +24,5 @@ Rails.application.routes.draw do
   # resources :activities
 
   get '/profile' => 'pages#profile'
-  # get '/admin'   => 'pages#admin_party'
+  get '/admin'   => 'pages#admin_view'
 end
