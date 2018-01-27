@@ -7,7 +7,7 @@
 <div class="container" id="user_stats">
     <div class="row">
         <div class="col-md-2" style="background-color:lavender;"><strong>AGE:</strong><em> <%= @current_user.age %>  </em></div>
-        <div class="col-md-2" style="background-color:lightgreen;"><strong>Height:</strong><em> <%= @current_user.height %> m</em></div>
+        <div class="col-md-2" style="background-color:lightcoral;"><strong>Height:</strong><em> <%= @current_user.height %> m</em></div>
         <div class="col-md-2" style="background-color:lightblue;"><strong>Weight: </strong><em><%= @current_user.weight %> kg</em></div>
         <div class="col-md-2" style="background-color:lightyellow;"><strong>BMI: </strong><em><%= @bmi.round(2) %> </em></div>
     </div>
@@ -50,10 +50,10 @@
 </div>
 
 <div class="container">
-  <h3>Weather: </h3>
+  <!-- <h3>Weather: </h3> -->
     <div class="row">
       <div class="col-md-3" id="weather">
-        <%= image_tag 'wicons.png'%>
+        <%#= image_tag 'wicons.png'%>
       </div>
   </div>
 </div>

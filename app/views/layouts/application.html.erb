@@ -27,7 +27,8 @@
    <% if @current_user.present? %>
      <%= link_to ' Home ', profile_path(@current_user.id) %>   |
      <%= link_to ' Logout', login_path, method: :delete %> |
-
+     <%= link_to ' Edit Account ', edit_user_path(@current_user.id) %>   |
+      
      <% else %>
        <nav>
          <%= link_to ' Login ', login_path %>|
