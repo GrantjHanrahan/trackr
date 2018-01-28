@@ -1,15 +1,14 @@
 
-
 <h3><strong><%= @current_user.name%> | <%= image_tag @current_user.avatar, class: "avatar" %></strong></h3>
 <br>
 
-<% @bmi = @current_user.weight / (@current_user.height * @current_user.height) %>
+<% @bmi = (@current_user.weight / (@current_user.height * @current_user.height)).round(2) %>
 <div class="container" id="user_stats">
     <div class="row">
         <div class="col-md-2" style="background-color:lavender;"><strong>AGE:</strong><em> <%= @current_user.age %>  </em></div>
         <div class="col-md-2" style="background-color:lightcoral;"><strong>Height:</strong><em> <%= @current_user.height %> m</em></div>
         <div class="col-md-2" style="background-color:lightblue;"><strong>Weight: </strong><em><%= @current_user.weight %> kg</em></div>
-        <div class="col-md-2" style="background-color:lightyellow;"><strong>BMI: </strong><em><%= @bmi.round(2) %> </em></div>
+        <div class="col-md-2" style="background-color:lightyellow;"><strong>BMI: </strong><em><%= @bmi %> </em></div>
     </div>
   </div>
 
@@ -57,3 +56,4 @@
       </div>
   </div>
 </div>
+=end

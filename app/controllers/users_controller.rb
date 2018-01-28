@@ -24,6 +24,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    User.destroy params[:id]
+    redirect_to admin_path
   end
 
   def edit

@@ -68,7 +68,7 @@ class WorkoutsController < ApplicationController
 
   def destroy
     Workout.destroy params[:id]
-    redirect_to workouts_path
+    redirect_to workout_path
   end
 
 private
