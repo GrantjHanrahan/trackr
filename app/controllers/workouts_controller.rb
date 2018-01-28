@@ -36,9 +36,6 @@ class WorkoutsController < ApplicationController
     end
     #------------------------------------------------------
 
-# raise 'hell'
-    # workout = @current_user.workouts.create workout_params
-    # if workout.persisted?
   end
 
   def show
@@ -54,9 +51,6 @@ class WorkoutsController < ApplicationController
     # @workout = Workout.find_by params[:workout_name]
     # if @workout.persisted?
     @activity = Activity.find_by params[:workout_name], [:distance], [:length]
-
-    # end
-
   end
 
   def update
@@ -69,6 +63,15 @@ class WorkoutsController < ApplicationController
   def destroy
     Workout.destroy params[:id]
     redirect_to workout_path
+  end
+
+  def lookup
+
+  search_url = "api.openweathermap.org/data/2.5/weather?q=Sydney&APPID=8d1194589041958e3246e9d8334d1a8c"
+
+  @results = HTTParty.get search_url
+  # @results = results['weather']
+
   end
 
 private

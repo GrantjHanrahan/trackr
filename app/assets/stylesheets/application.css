@@ -12,7 +12,6 @@
  *
  *= require_tree .
  *= require_self
- *= require fullcalendar
  */
  html {
    /* background: url("https://media.giphy.com/media/6Z3D5t31ZdoNW/giphy.gif") */
@@ -101,6 +100,7 @@ footer{
   left: 0;
   bottom: 0;
   width: 100%;
+  margin-top: 10%;
 }
 
 .errors{
@@ -117,4 +117,8 @@ ul {
 
 .logo{
   width: 180px;
+}
+
+#weather{
+  margin-bottom: 10%;
 }

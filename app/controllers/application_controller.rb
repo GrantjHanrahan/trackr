@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
 
   before_action :fetch_user
 
+
   def check_if_logged_in
     if @current_user.nil?
       flash[:error] = "You must be logged in to view this page."

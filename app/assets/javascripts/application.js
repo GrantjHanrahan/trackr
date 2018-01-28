@@ -15,13 +15,12 @@
 //= require jquery_ujs
 //= require_tree .
 //= require moment
-// = require fullcalendar
-// = require fullcalendar/gcal
-
-$('#calendar').fullCalendar({
 
 
-});
+// $('#calendar').fullCalendar({
+//
+// 
+// });
 
 // $(distances(){
 //   var $select = $(".1-100");

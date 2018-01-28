@@ -38,7 +38,6 @@
       <%= form_for Plan.new do |f| %>
         <strong><%= f.label 'Start Date : ' %></strong>
         <%= f.date_field :start %>
-
     </div>
       <div class="col-md-4">
         <strong><%= f.label 'End Date : ' %></strong>
@@ -48,11 +47,45 @@
   </div>
 </div>
 
-<div class="container">
-  <!-- <h3>Weather: </h3> -->
+<div class="container" id="weather">
     <div class="row">
-      <div class="col-md-3" id="weather">
-        <%#= image_tag 'wicons.png'%>
+      <h3>Forecast: </h3>
+        <br>
+        <form id=city-form>
+          <div class="col-md-3" id="button"><input type="submit" value="Enter City Name"></div>
+          <div class="col-md-3"><input type="text" id="city-name"></div>
+        </form>
+      <!-- </div> -->
+      <br>
+
+      <div class="row">
+        <div class="col-md-2" id="desc">
+        </div>
+        <div class="col-md-2" id="temp">
+        </div>
+        <div class="col-md-2" id="icon">
+        </div>
       </div>
   </div>
 </div>
+
+<!-- </div> -->
+
+<script>
+$("#city-form").submit(function(event){
+  event.preventDefault();
+  var cityName = $("#city-name").val();
+  getWeather(cityName);
+  });
+
+  const getWeather = function(city){
+      $.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&units=metric&APPID=<%=Rails.application.secrets.weather_api_key%>", function(data){
+        console.log(data)
+        $('#desc').html(data.weather[0].description);
+        $("#temp").html(data.main.temp + "&#8451;");
+        $("#icon").html(data.weather[0].icon);
+        });
+
+
+  }
+</script>

@@ -1,0 +1,6 @@
+development:
+  weather_api_key: Rails.application.secrets.weather_api_key
+production:
+  weather_api_key: Rails.application.secrets.weather_api_key
+test:
+  weather_api_key: Rails.application.secrets.weather_api_key

@@ -1,24 +1,24 @@
-# README
+# README - TRACKR
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Heroku link -
 
-Things you may want to cover:
+* Trackr;
+- Create a workout consisting of many activities(exercises)
+- Keep track of the workouts including date and what was completed.
 
-* Ruby version
+* Test Account;
+- Email: grant3@test.co
+- Password: chicken
 
-* System dependencies
+* Gems/ Api's;
+- Open-Weather
 
-* Configuration
+* Wishlist;
+- Current Weather does not include a Weather image
+- Complete Plan model with access to a calendar Gem
+- Calendar display to show Workouts on their dates
+- GPS API to track the location points of an exercise (run, cycle)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Bugs;
+- Datetime is displayed in UTC format
+- Route Paths need to be streamlined

@@ -25,4 +25,6 @@ Rails.application.routes.draw do
 
   get '/profile' => 'pages#profile'
   get '/admin'   => 'pages#admin_view'
+  get '/workouts' => 'workouts#show'
+  post '/workouts/lookup' => 'workouts#lookup'
 end

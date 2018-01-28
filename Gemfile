@@ -56,7 +56,7 @@ gem 'rails_12factor', group: :production
 gem 'pry-rails'
 gem 'annotate'
 gem 'jquery-rails'
-gem 'fullcalendar-rails'
+gem 'httparty'
 gem 'momentjs-rails'
 gem 'geocoder'
 gem 'cloudinary'
