@@ -1,6 +1,6 @@
 # README - TRACKR
 
-* Heroku link -
+* Heroku link - https://myactive-trackrr.herokuapp.com/
 
 * Trackr;
 - Create a workout consisting of many activities(exercises)
@@ -22,3 +22,4 @@
 * Bugs;
 - Datetime is displayed in UTC format
 - Route Paths need to be streamlined
+- users/show and pages/profile routes are getting mixed up, only users/show should appear after Login/ Registration
