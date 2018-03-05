@@ -67,9 +67,9 @@ class WorkoutsController < ApplicationController
 
   def lookup
 
-  search_url = "api.openweathermap.org/data/2.5/weather?q=Sydney&APPID=8d1194589041958e3246e9d8334d1a8c"
-
-  @results = HTTParty.get search_url
+  # search_url =
+  # 
+  # @results = HTTParty.get search_url
   # @results = results['weather']
 
   end

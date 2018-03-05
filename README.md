@@ -7,7 +7,7 @@
 - Keep track of the workouts including date and what was completed.
 
 * Test Account;
-- Email: grant3@test.co
+- Email: demo@test.co
 - Password: chicken
 
 * Gems/ Api's;
