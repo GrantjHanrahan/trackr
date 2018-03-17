@@ -122,3 +122,17 @@ ul {
 #weather{
   margin-bottom: 10%;
 }
+
+.trackr{
+  background-color: rgba(11, 8, 8, 0.7);
+  margin: 10%;
+  height: 30vh;
+  width: 80vw;
+
+}
+
+.trackr h3{
+  color: whitesmoke;
+  text-align: center;
+  padding-top: 30px;
+}

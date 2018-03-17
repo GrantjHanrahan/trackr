@@ -1,20 +1,18 @@
-<h3><strong>Login</strong></h3>
+<!-- <h3><strong>Login</strong></h3> -->
 
-<%= flash[:error] %>
-
-<div class="user">
-<%= bootstrap_form_for login_path do %>
-
-  <!-- <%= label_tag :name %>
-  <%= text_field_tag :name, nil %> -->
-
-  <%= label_tag :email %>
-  <%= email_field_tag :email, nil %><br>
-
-  <%= label_tag :password %>
-  <%= password_field_tag :password, nil %><br>
-
-  <%= submit_tag 'Login' %>
-
-<% end %>
+<div class="user-login">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <%= flash[:error] %>
+      <div class="user mt-5">
+        <%= form_tag login_path do %>
+        <%= label_tag :email %>
+        <%= email_field_tag :email, nil %>
+        <%= label_tag :password %>
+        <%= password_field_tag :password, nil %>
+        <%= submit_tag 'Login' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
