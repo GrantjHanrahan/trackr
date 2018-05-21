@@ -16,21 +16,6 @@
 //= require_tree .
 //= require moment
 
-
-// $('#calendar').fullCalendar({
-//
-// 
-// });
-
-// $(distances(){
-//   var $select = $(".1-100");
-//  for (i=1;i<=100;i++){
-//      $('#distance_select').append($('<option></option>').val(i).html(i))
-//  }
-// });
-//
-// $('#distance_select').on('click', distances)
-
 $(document).ready(function() {
 
 
